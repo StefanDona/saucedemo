@@ -18,14 +18,19 @@ class ProductPage {
     this.finishButton = Selector("#finish");
   }
 
-  async placeOrder() {
+  async placeOrder(firstName, lastName, zipCode) {
     await t.click(this.checkoutButton);
     await t
       .expect(this.checkoutForm.exists)
       .ok("Checkout form should be visible");
-    await t.typeText(this.firstName, chance.first(), { replace: true });
-    await t.typeText(this.lastName, chance.last(), { replace: true });
-    await t.typeText(this.zipCode, chance.zip(), { replace: true });
+    if ((firstName, lastName, zipCode === undefined)) {
+      firstName = chance.first();
+      lastName = chance.last();
+      zipCode = chance.zip();
+    }
+    await t.typeText(this.firstName, firstName, { replace: true });
+    await t.typeText(this.lastName, lastName, { replace: true });
+    await t.typeText(this.zipCode, zipCode, { replace: true });
     await t.click(this.continueButton);
     await t
       .expect(this.summaryInfo.exists)

@@ -13,5 +13,5 @@ test("Add bike light to cart", async (t) => {
   await t
     .expect(ProductPage.cartQuantity.innerText)
     .eql("1", "Cart should contain 1 item");
-  await ProductPage.checkout();
+  await ProductPage.placeOrder();
 });
