@@ -1,6 +1,6 @@
 import { Selector, t } from "testcafe";
 
-class loginModel {
+class LoginPage {
   constructor() {
     this.userName = Selector("#user-name");
     this.password = Selector("#password");
@@ -17,4 +17,4 @@ class loginModel {
   }
 }
 
-export default new loginModel();
+export default new LoginPage();

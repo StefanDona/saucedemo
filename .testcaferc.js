@@ -1,10 +1,9 @@
 const timeoutUnits = 30000;
 
 module.exports = {
-  src: ["tests/"],
-  browsers: "chrome",
+  browsers: "chrome --disable-features=PasswordLeakDetection",
   disablePageCaching: false,
-  disableMultipleWindows: false,
+  disableMultipleWindows: true,
   disableNativeAutomation: true,
   screenshots: {
     takeOnFails: true,

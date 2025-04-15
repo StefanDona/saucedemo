@@ -2,7 +2,10 @@
   "name": "saucedemo",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "testcafe chrome tests/",
+    "test:headless": "testcafe chrome:headless tests/"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
