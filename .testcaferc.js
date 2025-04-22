@@ -1,8 +1,8 @@
 const timeoutUnits = 10000;
 
 module.exports = {
-  browsers: "chrome --disable-features=PasswordLeakDetection",
-  disablePageCaching: false,
+  browsers: "chrome:headless --disable-features=PasswordLeakDetection",
+  disablePageCaching: true,
   disableMultipleWindows: true,
   disableNativeAutomation: true,
   screenshots: {
