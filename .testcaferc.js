@@ -1,10 +1,9 @@
-const timeoutUnits = 30000;
+const timeoutUnits = 10000;
 
 module.exports = {
-  src: ["tests/"],
-  browsers: "chrome",
+  browsers: "chrome --disable-features=PasswordLeakDetection",
   disablePageCaching: false,
-  disableMultipleWindows: false,
+  disableMultipleWindows: true,
   disableNativeAutomation: true,
   screenshots: {
     takeOnFails: true,
@@ -13,11 +12,11 @@ module.exports = {
   },
   concurrency: 1,
   speed: 0.85,
-  pageLoadTimeout: 40000,
+  pageLoadTimeout: 20000,
   assertionTimeout: timeoutUnits,
   selectorTimeout: timeoutUnits,
-  pageRequestTimeout: 40000,
-  ajaxRequestTimeout: 25000,
+  pageRequestTimeout: 20000,
+  ajaxRequestTimeout: 20000,
   testExecutionTimeout: 300000,
   skipJsErrors: true,
 };
